@@ -1,5 +1,13 @@
 # Changelog
 
+## Unreleased
+
+- Scarves read as cloth worn on the body: a roll round the neck, a front end on the chest edge, an end trailing in the wind.
+- The sun and moon set behind the horizon; the far ground fades into the sky's horizon colour (no grey band).
+- Clearer defaults: overcast and dusk haze keep the far side of wide shots readable; shared strings are thick enough to watch a tug travel.
+- `docs/design-decisions.md`: every rule that came from feedback, and where it lives in the engine.
+- Ten starter ideas for wordless films in `docs/storytelling.md`.
+
 ## 1.1.0 — 2026-11-23
 
 - Storytelling guide (`docs/storytelling.md`): what the form is best at, wordless conversation devices (the thread,

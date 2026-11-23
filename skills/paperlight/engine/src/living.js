@@ -40,12 +40,12 @@ export const LIGHTS = {
   morning:  { skyTop: '#93bde3', skyHorizon: '#f4e3c9', light: '#fff0da', ambient: 0.8, haze: '#ebe3d6', hazeDist: 150, emit: 0, shadow: 0.42, sun: '#fff1cf', ink: '#17181c', stars: 0 },
   noon:     { skyTop: '#78ade2', skyHorizon: '#d9e8f3', light: '#ffffff', ambient: 0.86, haze: '#d8e5ef', hazeDist: 190, emit: 0, shadow: 0.5, sun: '#fffbe9', ink: '#16171b', stars: 0 },
   golden:   { skyTop: '#86a3cf', skyHorizon: '#f4bf7c', light: '#ffd8a0', ambient: 0.76, haze: '#efc795', hazeDist: 125, emit: 0.2, shadow: 0.56, sun: '#ffd27a', ink: '#1b1611', stars: 0 },
-  dusk:     { skyTop: '#46598c', skyHorizon: '#e7a47d', light: '#c9b6c6', ambient: 0.58, haze: '#a395ad', hazeDist: 150, emit: 1, shadow: 0.22, sun: '#f0a46a', ink: '#141319', stars: 0.25 },
+  dusk:     { skyTop: '#46598c', skyHorizon: '#e7a47d', light: '#c9b6c6', ambient: 0.58, haze: '#a395ad', hazeDist: 190, emit: 1, shadow: 0.22, sun: '#f0a46a', ink: '#141319', stars: 0.25 },
   night:    { skyTop: '#121b38', skyHorizon: '#38486f', light: '#7f91c2', ambient: 0.34, haze: '#2f3c61', hazeDist: 70, emit: 1, shadow: 0.12, sun: '#cdd6ee', ink: '#0b0c12', stars: 1 },
   // dreams: pastel, soft, nearly shadowless; a deep-blue dream night for falling asleep into
   dream:    { skyTop: '#8d9fd8', skyHorizon: '#f2dce7', light: '#fff5fa', ambient: 0.86, haze: '#efe0ee', hazeDist: 230, emit: 0, shadow: 0.25, sun: '#ffe6c8', ink: '#1d2034', stars: 0 },
   dreamNight: { skyTop: '#1d2550', skyHorizon: '#6f6aa0', light: '#a7acd8', ambient: 0.5, haze: '#5d5b8e', hazeDist: 160, emit: 0.4, shadow: 0.1, sun: '#e9e4ff', ink: '#0e1024', stars: 1 },
-  overcast: { skyTop: '#a8b1bc', skyHorizon: '#d9dde0', light: '#e8ebee', ambient: 0.74, haze: '#cfd5da', hazeDist: 105, emit: 0.1, shadow: 0.18, sun: '#f2f2ee', ink: '#17181b', stars: 0 },
+  overcast: { skyTop: '#a8b1bc', skyHorizon: '#d9dde0', light: '#e8ebee', ambient: 0.74, haze: '#d6dbe0', hazeDist: 230, emit: 0.1, shadow: 0.18, sun: '#f2f2ee', ink: '#17181b', stars: 0 },
 };
 
 // what each kind of thing is made of (part → material name, a list to vary by seed, or a colour)

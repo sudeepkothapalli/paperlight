@@ -93,7 +93,7 @@ export default ({ cam }) => {
       ],
     },
     kite: {
-      kind: 'kite', set: 'land', color: 'kite', shareColor: 'bond', size: 0.95, length: 10, slack: 0.12, shareWidth: 2.6, tugSpeed: TUG_SPEED,
+      kind: 'kite', set: 'land', color: 'kite', shareColor: 'bond', size: 0.95, length: 10, slack: 0.12, tugSpeed: TUG_SPEED,
       blocking: [
         ['heldBy', 0, 'ivo'],
         ['length', 17.6, 34, 3.0],                                                                       // the line burns out
@@ -125,7 +125,6 @@ export default ({ cam }) => {
     fps: 24, size: [1920, 1080], seed: 23,
     palette: { paper: '#e3e5e8', ink: '#14161a', accent: '#c8372b' },
     air: { dir: 90, speed: 2.6, gust: 0.25, gusts: [[17.5, 2.2, 4.5]] },
-    lights: { overcast: { hazeDist: 230, haze: '#d6dbe0' }, dusk: { hazeDist: 190 } }, // a clear grey afternoon: the far side must stay visible
     colors, seasons, sets, cast,
     shots: [
       S({ name: 'apart', dur: 8, wt: 0, light: 'overcast', grade: { temp: -0.35, sat: 0.75 }, feel: sparse, fadeIn: 1.2,

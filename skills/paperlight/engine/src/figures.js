@@ -347,17 +347,38 @@ export function personShape(def, st, rel, time, wind = 1) {
   }
   const headEnd = polys.length;
   if (def.scarf) {
-    // a wrap hugging the neck above the collar, and one short tail hanging in front, moving a little
-    const wx = hcx * 0.6, sw = lerp(0.062, 0.05, s);
-    S(smoothClosed([[wx - sw, sy + 0.07], [wx, sy + 0.06], [wx + sw, sy + 0.07], [wx + sw * 0.92, sy + 0.12], [wx, sy + 0.128], [wx - sw * 0.92, sy + 0.12]], 4), def.scarf);
-    const side = lerp(-0.025, dir * 0.06, s);           // front view: off-centre; profile: on the chest
-    const tail = [];
-    for (let i = 0; i <= 6; i++) {
-      const u = i / 6;
-      tail.push([wx + side + dir * s * 0.02 * u + 0.012 * u * wind * noise3(u + time * 1.6, 2.2, 0), sy + 0.085 - u * 0.24]);
+    // A scarf that reads as cloth worn on the body, not a shape inside it: a soft roll round the neck that sits on the
+    // shoulders and breaks the outline; a front end that falls along the edge of the chest; and a back end that trails
+    // behind in the wind (outside the silhouette), lagging and fluttering. Tips are tapered and cut at an angle.
+    const col = def.scarf, back = Math.cos(rel) > 0.2;                     // seen from behind: only the roll and the trailing end
+    const nwk = lerp(0.1, 0.075, s);                                           // a little wider than the neck, not the shoulders
+    const flap = (u, ph) => 0.02 * u * wind * noise3(u * 2 + time * 1.7, ph, 0) + 0.012 * u * Math.sin(time * 3.1 + u * 4 + ph);
+    // the roll: a soft, slightly lumpy band from the back of the neck to the throat
+    const roll = [];
+    for (let i = 0; i <= 10; i++) { const t = i / 10, x = lerp(-nwk, nwk, t) + dir * s * 0.015; roll.push([x, sy + 0.045 - 0.018 * Math.sin(t * Math.PI) + 0.006 * Math.sin(t * Math.PI * 4)]); }
+    for (let i = 10; i >= 0; i--) { const t = i / 10, x = lerp(-nwk * 0.9, nwk * 0.9, t) + dir * s * 0.02; roll.push([x, sy + 0.115 + 0.008 * Math.sin(t * 7 + 1)]); }
+    S(smoothClosed(roll, 3), col);
+    // a ribbon along a centre line with a tapering width
+    const ribbon = (line, w0, w1) => {
+      const L = [], R = [];
+      for (let i = 0; i < line.length; i++) {
+        const a = line[Math.max(0, i - 1)], b = line[Math.min(line.length - 1, i + 1)], dx = b[0] - a[0], dy = b[1] - a[1], l = Math.hypot(dx, dy) || 1;
+        const w = lerp(w0, w1, i / (line.length - 1)), nx = -dy / l * w, ny = dx / l * w;
+        L.push([line[i][0] + nx, line[i][1] + ny]); R.push([line[i][0] - nx, line[i][1] - ny]);
+      }
+      const tip = line[line.length - 1];
+      S([...L, [tip[0] + (L[L.length - 1][0] - tip[0]) * 0.2, tip[1] - w1 * 1.6], ...R.reverse()], col); // an angled cut at the end
+    };
+    // front end: from the throat down the front edge of the chest (in profile it rides the outline, so it reads as worn)
+    if (!back) {
+      const fx = dir * s * 0.06 + (1 - s) * 0.035, front = [];
+      for (let i = 0; i <= 8; i++) { const u = i / 8; front.push([fx + dir * s * (0.075 * Math.sin(u * 1.4)) + flap(u, 1.3) * 0.6, sy + 0.08 - u * 0.3]); }
+      ribbon(front, 0.022, 0.018);
     }
-    const tw = (i) => lerp(0.018, 0.014, i / 6) * lerp(1, 0.75, s);
-    S([...tail.map(([x, y], i) => [x - tw(i), y]), ...tail.map(([x, y], i) => [x + tw(i), y]).reverse()], def.scarf);
+    // back end: over the shoulder, trailing behind in the wind and the walk
+    const trail = [], drag = 0.45 + 0.35 * Math.min(1.6, wind) + 0.4 * walk, len = 0.34 * Math.max(0.45, s + 0.3);
+    for (let i = 0; i <= 9; i++) { const u = i / 9, droop = 0.55 + 0.45 * u; trail.push([-dir * (nwk * 0.8 + len * u * drag * 0.75), sy + 0.1 - len * u * droop * (1.15 - drag * 0.35) + flap(u, 4.1) * 2]); } // it hangs, and lifts in the wind
+    ribbon(trail, 0.022, 0.016);
   }
 
   // ---- a tail (vanara): from the small of the back it sweeps back, rises and curls forward at the tip ----

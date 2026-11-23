@@ -72,7 +72,7 @@ story shapes that suit it.
 | `SKILL.md` | what Claude reads: capabilities, direction, workflow |
 | `engine/` | the renderer (Node, Skia canvas, ffmpeg): terrain, figures, camera, light, sound, checks |
 | `templates/` | a starter `film.js` and the `STORY.md` plan every film begins with |
-| `docs/` | storytelling (stories without words), style bible, direction guide, video patterns, research survey, roadmap |
+| `docs/` | storytelling (stories without words, starter ideas), design decisions, style bible, direction guide, video patterns, research survey, roadmap |
 | `films/` | the five example films, plus `_style-test` (visual regression) and two capability tests |
 
 A film is one JavaScript file describing moods, sets, cast (blocking in world time) and shots. Run it directly:

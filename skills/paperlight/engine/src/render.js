@@ -624,7 +624,7 @@ export function createRenderer(film0, { W, H, cacheDir, log = () => {}, Path2D }
         // a second holder keeps hold of the other end: one string, through both their hands. Slack, it lies on the
         // land; tugs travel along it from whoever pulled.
         const h1 = st.holders?.[1];
-        if (h1) drawThread(g, view, anchorOf(h1), h0, { sag: st.slack ?? 0.12, wind: w, time: wt, width: F.a.def.shareWidth ?? 1.3, color: pal[F.a.def.shareColor || 'ink'] || F.a.def.shareColor, seed: 9, scale,
+        if (h1) drawThread(g, view, anchorOf(h1), h0, { sag: st.slack ?? 0.12, wind: w, time: wt, width: F.a.def.shareWidth ?? 2.4, // thick enough to watch a tug travel in a wide shot color: pal[F.a.def.shareColor || 'ink'] || F.a.def.shareColor, seed: 9, scale,
           floor: 0.02, pulses: (st.tugs || []).map((q) => ({ t: q.t, amp: q.amp, fromA: q.who === h1 })), speed: F.a.def.tugSpeed ?? 15 });
       } else if (st.free) {
         // the string trails below; as a catch approaches, its end swings into the catcher's hand

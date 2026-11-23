@@ -18,6 +18,8 @@ no imports and works in any folder).
 **Setup once** (in the skill directory): `npm install` (Node ≥ 20); `ffmpeg` must be on PATH. If `npm install` has
 not been run, run it before the first command.
 
+**Before changing the engine, read `docs/design-decisions.md`**: every rule there came from feedback and must stay true.
+
 `engine/` renders · `docs/` explains · `templates/` starts a film · `films/*` are worked examples — read one first
 (`films/_style-test` is the visual regression test; `_lab` and `_loop` are capability tests).
 
@@ -195,7 +197,7 @@ Build every film around a **wordless conversation**: a visible question and a vi
   connects them, **waiting**, **shadows that meet first**, **call-and-response melodies**.
 
 Seed the device early, leave a pause between question and answer, escalate in threes, and always show the message
-arrive and the receiver react. Avoid stories that need speech, faces or explanation.
+arrive and the receiver react. Avoid stories that need speech, faces or explanation. Starter ideas are in `docs/storytelling.md`.
 
 ## 3. Direction: adapt to the story
 

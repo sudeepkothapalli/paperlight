@@ -49,6 +49,8 @@ can see**.
    through the other window), and see the receiver react with their body.
 6. **No title cards that explain.** A title or a last line can frame the film; it never tells what happened.
 7. **Must read with the sound off.** List the two or three images that carry the story without music.
+8. **End on the image that holds the story** — its place and its object together (the two figures under the kite,
+   the bridge under the moon). Check the final shot shows both.
 
 ## Story shapes that fit
 
@@ -61,6 +63,23 @@ can see**.
 | **The found friend** | a lonely character meets something that isn't a person | *a girl befriends a cloud in her dream* |
 | **The path** | one person's choice becomes everyone's way | *a path forms across a field from one person's footsteps* |
 | **Over the fence** | something thrown back and forth until it means more than a game | *a ball comes over a garden fence every day; one day a flower comes back instead* |
+
+## Starter ideas
+
+Ready to make; each uses what the engine already draws.
+
+| film | the story | the wordless conversation |
+|---|---|---|
+| **Window to Window** | two strangers in facing windows across a dark street; she switches her lamp off and on, and a lamp answers | lamp signals in threes, until both lamps stay on |
+| **Over the Fence** | a ball keeps landing in an old woman's garden; she throws it back, annoyed; one day a flower comes back with it | a passed object that changes meaning |
+| **The Lantern River** | at dusk a child floats a lantern downstream; on the far bank another child lights a second one and sends it back | light passed along the water |
+| **Two Kites** | two kites tangle in a gust; their owners walk toward each other to unwind them and end up flying side by side | tangled strings, tugs to find whose is whose |
+| **Seasons of a Bench** | an old man feeds birds alone; each season a girl sits a little closer, until in winter she brings the bread | distance closing season by season |
+| **The Red Umbrella** | in grey rain one person shares a red umbrella; the stranger passes the shelter on; the red travels through town | a colour that passes from person to person |
+| **The Last Train** | a traveller drops a glove as the train leaves; a station worker runs it the length of the platform | running alongside, a hand through a window, a wave |
+| **Paper Bird** | a child sends a paper bird out of a high window on the wind; a boy below folds another and sends it back up | the wind as messenger; a gift returned |
+| **The Line Between Roofs** | two neighbours on facing rooftops string a line and send things across it all night | the thread as a bridge; each object a sentence |
+| **Lighthouse** | a keeper flashes the light each night for one passing boat; one night it doesn't come; the next it answers | signal, absence, answer |
 
 ## Planning it
 
