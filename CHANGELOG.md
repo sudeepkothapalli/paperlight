@@ -1,6 +1,6 @@
 # Changelog
 
-## Unreleased
+## 1.2.0 — 2026-11-23
 
 - Scarves read as cloth worn on the body: a roll round the neck, a front end on the chest edge, an end trailing in the wind.
 - The sun and moon set behind the horizon; the far ground fades into the sky's horizon colour (no grey band).

@@ -1,6 +1,6 @@
 {
   "name": "paperlight",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "type": "module",
   "description": "Paperlight \u2014 short narrative animated films made entirely from code: ink silhouettes in living, lit worlds. A Claude Code skill.",
   "bin": {
