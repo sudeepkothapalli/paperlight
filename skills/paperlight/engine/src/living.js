@@ -162,7 +162,8 @@ export function drawBackdrop(g, view, Lv, groundBase) {
     g.save(); g.globalCompositeOperation = 'screen'; g.fillStyle = nb; g.fillRect(0, Math.max(0, hy - H * 0.32), W, Math.min(H, hy) - Math.max(0, hy - H * 0.32)); g.restore();
   }
   if (hy < H) {
-    const near = Lv.lit(groundBase, 0.75, 0), farC = Lv.lit(groundBase, 0.75, L.hazeDist * 2.2);
+    // the far ground dissolves into the sky's own horizon colour, so there is no seam of a different haze between them
+    const near = Lv.lit(groundBase, 0.75, 0), farC = mixC(Lv.lit(groundBase, 0.75, L.hazeDist * 2.2), Lv.tint(L.skyHorizon), 0.6);
     const gr = g.createLinearGradient(0, hy, 0, H + Math.max(0, H - hy) * 0.3);
     gr.addColorStop(0, farC); gr.addColorStop(0.08, mixC(farC, near, 0.45)); gr.addColorStop(1, near);
     g.fillStyle = gr; g.fillRect(0, Math.max(0, hy), W, H - Math.max(0, hy));

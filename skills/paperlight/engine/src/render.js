@@ -493,7 +493,15 @@ export function createRenderer(film0, { W, H, cacheDir, log = () => {}, Path2D }
         cloudItems.sort((A, B) => view.toCam(...B.c.pos3)[2] - view.toCam(...A.c.pos3)[2]).forEach(drawC);
         g.restore();
       }
-    } else drawSky(g, view, sky, { ...pal, sky: pal.paper }, wt, scale);
+    } else {
+      // the sky lives above the horizon: a low sun or moon sets *behind* the land instead of painting over it
+      const fh = Math.hypot(view.F[0], view.F[2]) || 1;
+      const hz = view.project(cam.pos[0] + (view.F[0] / fh) * 1e5, 0, cam.pos[2] + (view.F[2] / fh) * 1e5);
+      const hy = hz ? hz[1] : view.F[1] > 0 ? H * 2 : -H;
+      g.save(); if (!(set.boards)) { g.beginPath(); g.rect(0, 0, W, Math.max(0, Math.min(H, hy))); g.clip(); }
+      drawSky(g, view, sky, { ...pal, sky: pal.paper }, wt, scale);
+      g.restore();
+    }
 
     if (Lv) for (const rd of set.roads || []) { // paved roads and paths, in their own material
       if (!rd._geo) rd._geo = riverGeometry({ pts: rd.pts, width: rd.width ?? 3 });
