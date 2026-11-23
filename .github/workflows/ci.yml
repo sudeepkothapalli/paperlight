@@ -1,0 +1,24 @@
+name: ci
+on: [push, pull_request]
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: skills/paperlight
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 22
+      - run: npm ci
+      - name: Lint every example film
+        run: for f in films/*/film.js; do node engine/src/cli.js lint "$f" || exit 1; done
+      - name: Capability list
+        run: node engine/src/cli.js caps films/the-bridge/film.js
+      - name: Style test storyboard
+        run: node engine/src/cli.js board films/_style-test/film.js
+      - uses: actions/upload-artifact@v5
+        with:
+          name: style-test-storyboard
+          path: skills/paperlight/films/_style-test/out/storyboard.png

@@ -1,0 +1,31 @@
+{
+  "name": "paperlight",
+  "version": "1.1.0",
+  "type": "module",
+  "description": "Paperlight \u2014 short narrative animated films made entirely from code: ink silhouettes in living, lit worlds. A Claude Code skill.",
+  "bin": {
+    "paperlight": "engine/src/cli.js"
+  },
+  "dependencies": {
+    "@napi-rs/canvas": "^0.1.80",
+    "d3-contour": "^4.0.2"
+  },
+  "license": "MIT",
+  "engines": {
+    "node": ">=20"
+  },
+  "keywords": [
+    "animation",
+    "silhouette",
+    "generative",
+    "film",
+    "claude-code",
+    "skill",
+    "canvas",
+    "ffmpeg"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sudeepkothapalli/paperlight"
+  }
+}
